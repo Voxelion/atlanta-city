@@ -12,10 +12,13 @@ Px = 640
 Py = 360
 Cx = 0
 Cy = 0
-
+class Entity(pygame.sprite.Sprite):
+    def __init__(self, velocity, image):
+        pygame.sprite.Sprite.__init__(self)
+        self.image.load(image)
 
 while True: #main game loop
-    for event in pygame.event.get(): #nasluchiwanie
+    for event in pygame.event.get(): #event catcher
         if event.type == QUIT:
             quit()
             sys.exit()
